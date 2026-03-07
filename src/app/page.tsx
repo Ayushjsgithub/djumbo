@@ -18,6 +18,7 @@ import { KeyboardShortcutsModal } from '../components/KeyboardShortcutsModal';
 import { PhraseCountdownBar } from '../components/PhraseCountdownBar';
 import { NoobSimpleView } from '../components/NoobSimpleView';
 import { DJAcademyView } from '../components/DJAcademyView';
+import packageJson from '../../package.json';
 
 export default function DJStudioApp() {
   const engineRef = useRef<AudioEngine | null>(null);
@@ -580,6 +581,20 @@ export default function DJStudioApp() {
             />
           </div>
         )}
+
+        {/* Footer */}
+        <footer className="mt-auto pt-8 pb-4 text-center text-xs text-zinc-500 font-mono flex flex-col sm:flex-row items-center justify-center gap-2">
+          <span>Djumbo v{packageJson.version}</span>
+          <span className="hidden sm:inline">•</span>
+          <a 
+            href="https://github.com/Ayushjsgithub/djumbo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-zinc-300 transition-colors underline decoration-zinc-700 underline-offset-2"
+          >
+            GitHub
+          </a>
+        </footer>
       </div>
 
       {/* Modals */}
